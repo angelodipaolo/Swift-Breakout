@@ -1,4 +1,4 @@
 Swift-Breakout
 ==============
 
-a Breakout demo in Swift using SpriteKit
+A very simple demo of Breakout written in Swift using SpriteKit.
