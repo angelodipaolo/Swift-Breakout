@@ -82,15 +82,15 @@
 		17734988194433FB00368B63 /* Breakout-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				17956E45196E3EFF009A31EF /* Main.storyboard */,
 				17956E35196E3EE0009A31EF /* AppDelegate.swift */,
 				17956E36196E3EE0009A31EF /* Ball.swift */,
-				17956E37196E3EE0009A31EF /* BlockGrid.swift */,
-				17956E38196E3EE0009A31EF /* GameScene.sks */,
-				17956E39196E3EE0009A31EF /* GameScene.swift */,
-				17956E3A196E3EE0009A31EF /* GameViewController.swift */,
-				17956E3B196E3EE0009A31EF /* Images.xcassets */,
 				17956E3C196E3EE0009A31EF /* Paddle.swift */,
+				17956E37196E3EE0009A31EF /* BlockGrid.swift */,
+				17956E39196E3EE0009A31EF /* GameScene.swift */,
+				17956E38196E3EE0009A31EF /* GameScene.sks */,
+				17956E3A196E3EE0009A31EF /* GameViewController.swift */,
+				17956E45196E3EFF009A31EF /* Main.storyboard */,
+				17956E3B196E3EE0009A31EF /* Images.xcassets */,
 				17734989194433FB00368B63 /* Supporting Files */,
 			);
 			path = "Breakout-Swift";

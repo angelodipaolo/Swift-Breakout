@@ -27,6 +27,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder)
+        
+        backgroundColor = UIColor.blackColor()
 
         // setup physics
         physicsBody = SKPhysicsBody(edgeLoopFromRect: frame)

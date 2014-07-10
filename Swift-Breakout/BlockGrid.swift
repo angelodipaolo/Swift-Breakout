@@ -23,7 +23,7 @@ class BlockGrid {
         for y in 1...rows {
             for x in 1...columns {
                 var block = Block()
-                block.node = SKSpriteNode(color: UIColor.greenColor(), size:block.size)
+                block.node = SKSpriteNode(color: UIColor.darkGrayColor(), size:block.size)
                 let positionX = x * (Int(block.size.width) + padding)
                 let positionY = Int(position.y) - (y * (Int(block.size.height) + padding))
                 block.node.position = CGPoint(x: positionX, y:  positionY)

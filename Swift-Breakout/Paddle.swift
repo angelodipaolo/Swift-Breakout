@@ -11,7 +11,7 @@ import SpriteKit
 class Paddle: SKSpriteNode {
     
     convenience init() {
-        self.init(color: UIColor.blueColor(), size:CGSize(width: 150, height: 30))
+        self.init(color: UIColor.lightGrayColor(), size:CGSize(width: 150, height: 30))
     }
     
     init(texture: SKTexture!, color: UIColor!, size: CGSize)  {
