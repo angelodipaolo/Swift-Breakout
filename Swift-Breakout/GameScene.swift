@@ -8,13 +8,6 @@
 
 import SpriteKit
 
-enum CollisionType: UInt32 {
-    case Paddle = 1
-    case Ball = 2
-    case Block = 4
-    case Wall = 8
-}
-
 class GameScene: SKScene, SKPhysicsContactDelegate {
 
     // Nodes
@@ -22,6 +15,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let paddle = Paddle()
     let ball = Ball(imageNamed: "ball")
     let grid = BlockGrid(position: CGPoint(x: 0, y: 650), size: CGSizeMake(9, 8))
+    var isGameRunning = false
+    let deathThreshold = 20.0
     
     // Initialization
     
@@ -36,19 +31,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
 
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.frame.size.width/2)
-        ball.physicsBody.friction = 0.0
-        ball.physicsBody.restitution = 1.0
-        ball.physicsBody.linearDamping = 0.0
-        ball.physicsBody.allowsRotation = false
-        ball.physicsBody.categoryBitMask = CollisionType.Ball.toRaw()
-        ball.physicsBody.contactTestBitMask = CollisionType.Block.toRaw()
+        ball.configurePhysicsBody()
         
         // position nodes
+        positionNodes()
+        addNodes()
+    }
+    
+    // Setup
+    
+    func positionNodes() {
         paddle.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + (paddle.size.height * 5));
-        ball.position = CGPoint(x: paddle.position.x, y: paddle.position.y + (ball.size.height * 1.5))
-        
-        // add nodes
+        ball.position = CGPoint(x: paddle.position.x, y: paddle.position.y + (ball.size.height * 1.1))
+    }
+    
+    func addNodes() {
         addChild(paddle)
         addChild(ball)
         
@@ -56,12 +53,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(block.node)
         }
     }
-
-    override func didMoveToView(view: SKView) {
+    
+    // Game State
+    
+    func runGame() {
+        isGameRunning = true
         ball.launch()
     }
     
+    func reset() {
+        isGameRunning = false
+        ball.configurePhysicsBody()
+        positionNodes()
+    }
+    
     // Detecting Touches
+    
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        if !isGameRunning {
+            runGame()
+        }
+    }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!)  {
         let touch : AnyObject! = touches.anyObject()
@@ -90,6 +102,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // remove collided block
         if let index = indexOfCollidedBlock {
             grid.blocks.removeAtIndex(index)
+        }
+        
+        if ball.position.y < deathThreshold {
+            reset()
         }
     }
 }
