@@ -10,6 +10,8 @@ import SpriteKit
 
 class Paddle: SKSpriteNode {
     
+    var isActive = false
+    
     convenience init() {
         self.init(color: UIColor.lightGrayColor(), size:CGSize(width: 150, height: 30))
     }

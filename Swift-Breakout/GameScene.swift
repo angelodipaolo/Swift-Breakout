@@ -30,10 +30,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsBody.friction = 0.0
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
-
         ball.configurePhysicsBody()
-        
-        // position nodes
+
+        // setup nodes
         positionNodes()
         addNodes()
     }
@@ -61,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ball.launch()
     }
     
-    func reset() {
+    func resetBall() {
         isGameRunning = false
         ball.configurePhysicsBody()
         positionNodes()
@@ -70,15 +69,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Detecting Touches
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        if !isGameRunning {
-            runGame()
+        let touch : AnyObject! = touches.anyObject()
+        let location = touch.locationInNode(self)
+
+        if CGRectContainsPoint(paddle.frame, location) {
+            paddle.isActive = true;
+            
+            if !isGameRunning {
+                runGame()
+            }
         }
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!)  {
         let touch : AnyObject! = touches.anyObject()
         let location = touch.locationInNode(self)
-        paddle.position.x = location.x
+        
+        if paddle.isActive {
+            paddle.position.x = location.x
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        paddle.isActive = false
     }
     
     // Updating Scene
@@ -105,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if ball.position.y < deathThreshold {
-            reset()
+            resetBall()
         }
     }
 }

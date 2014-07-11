@@ -9,6 +9,7 @@
 import SpriteKit
 
 class BlockGrid {
+    
     var blocks: [Block] = []
 
     init(position: CGPoint, size: CGSize) {
