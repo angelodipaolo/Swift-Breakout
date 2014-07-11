@@ -11,6 +11,13 @@ import SpriteKit
 class BlockGrid {
     
     var blocks: [Block] = []
+    var levelNumber = 1
+    
+    class func GridWithLevel(levelNumber: Int) -> BlockGrid {
+        let grid = BlockGrid(position: CGPoint(x: 0, y: 650), size: CGSizeMake(9, 8))
+        grid.levelNumber = levelNumber
+        return grid
+    }
 
     init(position: CGPoint, size: CGSize) {
         addBlocksAtPosition(position, size: size)

@@ -9,12 +9,10 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-
-    // Nodes
     
     let paddle = Paddle()
     let ball = Ball(imageNamed: "ball")
-    let grid = BlockGrid(position: CGPoint(x: 0, y: 650), size: CGSizeMake(9, 8))
+    var grid = BlockGrid.GridWithLevel(1)
     var isGameRunning = false
     let deathThreshold = 20.0
     
@@ -48,12 +46,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(paddle)
         addChild(ball)
         
+        addGridNodes()
+    }
+    
+    func addGridNodes() {
         for block in grid.blocks {
             addChild(block.node)
         }
     }
     
-    // Game State
+    // Level Events
     
     func runGame() {
         isGameRunning = true
@@ -64,6 +66,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         isGameRunning = false
         ball.configurePhysicsBody()
         positionNodes()
+    }
+    
+    func endLevel() {
+        let nextLevel = grid.levelNumber++
+        grid = BlockGrid.GridWithLevel(nextLevel)
+        
+        resetBall()
+        addGridNodes()
     }
     
     // Detecting Touches
@@ -98,6 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func update(currentTime: CFTimeInterval) {
         handleCollisions()
+        updateNodes()
     }
     
     func handleCollisions() {
@@ -116,9 +127,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let index = indexOfCollidedBlock {
             grid.blocks.removeAtIndex(index)
         }
-        
+    }
+    
+    func updateNodes() {
+        // check for lost ball
         if ball.position.y < deathThreshold {
             resetBall()
+        }
+        
+        // end level when all blocks are destroyed
+        if grid.blocks.count == 0 {
+            endLevel()
         }
     }
 }
