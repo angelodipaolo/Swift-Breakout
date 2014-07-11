@@ -35,7 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addNodes()
     }
     
-    // Setup
+    // Node Setup
     
     func positionNodes() {
         paddle.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + (paddle.size.height * 5));
@@ -107,11 +107,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Updating Scene
    
     override func update(currentTime: CFTimeInterval) {
-        handleCollisions()
-        updateNodes()
+        // check for ball and block grid collision
+        detectGridCollision()
+        
+        // check for lost ball
+        if ball.position.y < deathThreshold {
+            resetBall()
+        }
+        
+        // end level when all blocks are destroyed
+        if grid.blocks.count == 0 {
+            endLevel()
+        }
     }
     
-    func handleCollisions() {
+    func detectGridCollision() {
         var indexOfCollidedBlock: Int? // optionals are sweeeeeeeet
         
         // look for ball/block collision
@@ -126,18 +136,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // remove collided block
         if let index = indexOfCollidedBlock {
             grid.blocks.removeAtIndex(index)
-        }
-    }
-    
-    func updateNodes() {
-        // check for lost ball
-        if ball.position.y < deathThreshold {
-            resetBall()
-        }
-        
-        // end level when all blocks are destroyed
-        if grid.blocks.count == 0 {
-            endLevel()
         }
     }
 }
