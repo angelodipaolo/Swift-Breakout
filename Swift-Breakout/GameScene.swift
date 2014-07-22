@@ -16,7 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isGameRunning = false
     let deathThreshold = CGFloat(20.0)
     
-    // Initialization
+    //MARK: Initialization
     
     init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder)
@@ -35,7 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addNodes()
     }
     
-    // Node Setup
+    //MARK: Node Setup
     
     func positionNodes() {
         paddle.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + (paddle.size.height * 5));
@@ -55,7 +55,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    // Level Events
+    //MARK: Level Events
     
     func runGame() {
         isGameRunning = true
@@ -76,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addGridNodes()
     }
     
-    // Detecting Touches
+    //MARK: Detecting Touches
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
         let touch : AnyObject! = touches.anyObject()
@@ -104,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         paddle.isActive = false
     }
     
-    // Updating Scene
+    //MARK: Updating Scene
    
     override func update(currentTime: CFTimeInterval) {
         // check for ball and block grid collision
