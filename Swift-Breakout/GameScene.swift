@@ -14,7 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let ball = Ball(imageNamed: "ball")
     var grid = BlockGrid.GridWithLevel(1)
     var isGameRunning = false
-    let deathThreshold = 20.0
+    let deathThreshold = CGFloat(20.0)
     
     // Initialization
     
