@@ -18,7 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Initialization
     
-    init(coder aDecoder: NSCoder!)  {
+    required init(coder aDecoder: NSCoder!)  {
         super.init(coder: aDecoder)
         
         backgroundColor = UIColor.blackColor()

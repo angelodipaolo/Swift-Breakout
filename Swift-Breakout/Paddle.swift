@@ -11,12 +11,16 @@ import SpriteKit
 class Paddle: SKSpriteNode {
     
     var isActive = false
-    
-    convenience init() {
-        self.init(color: UIColor.lightGrayColor(), size:CGSize(width: 150, height: 30))
+
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
     }
     
-    init(texture: SKTexture!, color: UIColor!, size: CGSize)  {
+    convenience override init() {
+        self.init(color: UIColor.lightGrayColor(), size:CGSize(width: 150, height: 30))
+    }
+
+    override init(texture: SKTexture!, color: UIColor!, size: CGSize)  {
         super.init(texture: texture, color: color, size: size)
         physicsBody = SKPhysicsBody(rectangleOfSize: size)
         physicsBody.dynamic = false
