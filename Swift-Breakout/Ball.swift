@@ -10,15 +10,17 @@ import SpriteKit
 
 class Ball: SKSpriteNode {
     
-    func launch() {
-        physicsBody.applyImpulse(CGVectorMake(15, -15))
+    func launch() {        
+        if let body = self.physicsBody {
+            body.applyImpulse(CGVectorMake(15, -15))
+        }
     }
     
     func configurePhysicsBody() {
         physicsBody = SKPhysicsBody(circleOfRadius: frame.size.width/2)
-        physicsBody.friction = 0.0
-        physicsBody.restitution = 1.0
-        physicsBody.linearDamping = 0.0
-        physicsBody.allowsRotation = false
+        physicsBody?.friction = 0.0
+        physicsBody?.restitution = 1.0
+        physicsBody?.linearDamping = 0.0
+        physicsBody?.allowsRotation = false
     }
 }

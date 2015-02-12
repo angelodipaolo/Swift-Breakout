@@ -18,18 +18,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Initialization
     
-    required init(coder aDecoder: NSCoder!)  {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         backgroundColor = UIColor.blackColor()
-
+        
         // setup physics
         physicsBody = SKPhysicsBody(edgeLoopFromRect: frame)
-        physicsBody.friction = 0.0
+        physicsBody?.friction = 0.0
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
         ball.configurePhysicsBody()
-
+        
         // setup nodes
         positionNodes()
         addNodes()
@@ -78,10 +78,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Detecting Touches
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        let touch : AnyObject! = touches.anyObject()
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch : AnyObject! = touches.first
         let location = touch.locationInNode(self)
-
+        
         if CGRectContainsPoint(paddle.frame, location) {
             paddle.isActive = true;
             
@@ -90,9 +90,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-    
-    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!)  {
-        let touch : AnyObject! = touches.anyObject()
+
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch : AnyObject! = touches.first
         let location = touch.locationInNode(self)
         
         if paddle.isActive {
@@ -100,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         paddle.isActive = false
     }
     
@@ -129,7 +129,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if CGRectIntersectsRect(block.node.frame, ball.frame) {
                 indexOfCollidedBlock = index
                 block.node.removeFromParent()
-                ball.physicsBody.velocity.dy = -ball.physicsBody.velocity.dy
+                
+                if let body = self.ball.physicsBody {
+                    body.velocity.dy = -body.velocity.dy
+                }
             }
         }
         
