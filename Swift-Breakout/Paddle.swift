@@ -16,7 +16,7 @@ class Paddle: SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
-    convenience override init() {
+    convenience init() {
         self.init(texture: nil, color: UIColor.lightGrayColor(), size: CGSize(width: 150, height: 30))
     }
 

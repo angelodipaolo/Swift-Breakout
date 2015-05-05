@@ -16,7 +16,6 @@
 		17956E43196E3EE0009A31EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17956E3B196E3EE0009A31EF /* Images.xcassets */; };
 		17956E44196E3EE0009A31EF /* Paddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E3C196E3EE0009A31EF /* Paddle.swift */; };
 		17956E47196E3EFF009A31EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17956E45196E3EFF009A31EF /* Main.storyboard */; };
-		17956E49196E3F08009A31EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17956E48196E3F08009A31EF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,7 +183,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17956E49196E3F08009A31EF /* Info.plist in Resources */,
 				17956E47196E3EFF009A31EF /* Main.storyboard in Resources */,
 				17956E40196E3EE0009A31EF /* GameScene.sks in Resources */,
 				17956E43196E3EE0009A31EF /* Images.xcassets in Resources */,
