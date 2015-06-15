@@ -10,7 +10,6 @@
 		17956E3D196E3EE0009A31EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E35196E3EE0009A31EF /* AppDelegate.swift */; };
 		17956E3E196E3EE0009A31EF /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E36196E3EE0009A31EF /* Ball.swift */; };
 		17956E3F196E3EE0009A31EF /* BlockGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E37196E3EE0009A31EF /* BlockGrid.swift */; };
-		17956E40196E3EE0009A31EF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 17956E38196E3EE0009A31EF /* GameScene.sks */; };
 		17956E41196E3EE0009A31EF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E39196E3EE0009A31EF /* GameScene.swift */; };
 		17956E42196E3EE0009A31EF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E3A196E3EE0009A31EF /* GameViewController.swift */; };
 		17956E43196E3EE0009A31EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17956E3B196E3EE0009A31EF /* Images.xcassets */; };
@@ -23,7 +22,6 @@
 		17956E35196E3EE0009A31EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Swift-Breakout/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		17956E36196E3EE0009A31EF /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = "Swift-Breakout/Ball.swift"; sourceTree = SOURCE_ROOT; };
 		17956E37196E3EE0009A31EF /* BlockGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockGrid.swift; path = "Swift-Breakout/BlockGrid.swift"; sourceTree = SOURCE_ROOT; };
-		17956E38196E3EE0009A31EF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = "Swift-Breakout/GameScene.sks"; sourceTree = SOURCE_ROOT; };
 		17956E39196E3EE0009A31EF /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "Swift-Breakout/GameScene.swift"; sourceTree = SOURCE_ROOT; };
 		17956E3A196E3EE0009A31EF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "Swift-Breakout/GameViewController.swift"; sourceTree = SOURCE_ROOT; };
 		17956E3B196E3EE0009A31EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Swift-Breakout/Images.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -67,7 +65,6 @@
 				17956E3C196E3EE0009A31EF /* Paddle.swift */,
 				17956E37196E3EE0009A31EF /* BlockGrid.swift */,
 				17956E39196E3EE0009A31EF /* GameScene.swift */,
-				17956E38196E3EE0009A31EF /* GameScene.sks */,
 				17956E3A196E3EE0009A31EF /* GameViewController.swift */,
 				17956E45196E3EFF009A31EF /* Main.storyboard */,
 				17956E3B196E3EE0009A31EF /* Images.xcassets */,
@@ -143,7 +140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				17956E47196E3EFF009A31EF /* Main.storyboard in Resources */,
-				17956E40196E3EE0009A31EF /* GameScene.sks in Resources */,
 				17956E43196E3EE0009A31EF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

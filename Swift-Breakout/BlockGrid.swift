@@ -12,7 +12,7 @@ struct BlockGrid {
     
     struct Block {
         let size = CGSize(width: 105.6, height: 30)
-        var node: SKNode?
+        var sprite: SKSpriteNode?
     }
     
     var blocks = [Block]()
@@ -31,13 +31,12 @@ struct BlockGrid {
         for y in 0...rows {
             for x in 0...columns {
                 var block = Block()
-                block.node = SKSpriteNode(color: UIColor.darkGrayColor(), size:block.size)
+                block.sprite = SKSpriteNode(color: UIColor.darkGrayColor(), size:block.size)
                 let positionX = Int(position.x) + x * (Int(block.size.width) + padding)
                 let positionY = Int(position.y) - (y * (Int(block.size.height) + padding))
-                block.node?.position = CGPoint(x: positionX, y:  positionY)
+                block.sprite?.position = CGPoint(x: positionX, y:  positionY)
                 blocks.append(block)
             }
         }
     }
 }
-

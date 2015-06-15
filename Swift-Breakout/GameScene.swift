@@ -15,70 +15,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var grid = BlockGrid(levelNumber: 1)
     var isGameRunning = false
     let deathThreshold = CGFloat(20.0)
-    
-    //MARK: Initialization
-    
+
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    required override init(size: CGSize) {
+        super.init(size: size)
         backgroundColor = UIColor.blackColor()
         
-        // setup physics
         physicsBody = SKPhysicsBody(edgeLoopFromRect: frame)
         physicsBody?.friction = 0.0
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
-        ball.configurePhysicsBody()
         
-        // setup nodes
-        positionNodes()
-        addNodes()
+        addSprites()
+        layoutSprites()
     }
     
-    //MARK: Node Setup
-    
-    func positionNodes() {
-        paddle.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + (paddle.size.height * 5));
-        ball.position = CGPoint(x: paddle.position.x, y: paddle.position.y + (ball.size.height * 1.1))
-    }
-    
-    func addNodes() {
-        addChild(paddle)
-        addChild(ball)
+    override func update(currentTime: CFTimeInterval) {
+        // check for ball and block grid collision
+        detectGridCollision()
         
-        addGridNodes()
-    }
-    
-    func addGridNodes() {
-        for block in grid.blocks {
-            if let node = block.node {
-                addChild(node)
-            }
+        // check for lost ball
+        if ball.position.y < deathThreshold {
+            resetBall()
+        }
+        
+        // end level when all blocks are destroyed
+        if grid.blocks.count == 0 {
+            endLevel()
         }
     }
     
-    //MARK: Level Events
-    
-    func runGame() {
-        isGameRunning = true
-        ball.launch()
-    }
-    
-    func resetBall() {
-        isGameRunning = false
-        ball.configurePhysicsBody()
-        positionNodes()
-    }
-    
-    func endLevel() {
-        let nextLevel = grid.levelNumber++
-        grid = BlockGrid(levelNumber: nextLevel)
-        
-        resetBall()
-        addGridNodes()
-    }
-    
-    //MARK: Detecting Touches
+    // MARK: Detecting Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch : AnyObject! = touches.first
@@ -88,7 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             paddle.isActive = true;
             
             if !isGameRunning {
-                runGame()
+                startLevel()
             }
         }
     }
@@ -105,38 +75,76 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         paddle.isActive = false
     }
+}
+
+// MARK: - Sprite Setup
+
+extension GameScene {
     
-    //MARK: Updating Scene
-   
-    override func update(currentTime: CFTimeInterval) {
-        // check for ball and block grid collision
-        detectGridCollision()
+    func layoutSprites() {
+        paddle.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame) + (paddle.size.height * 5));
+        ball.position = CGPoint(x: paddle.position.x, y: paddle.position.y + (ball.size.height * 1.1))
+    }
+    
+    func addSprites() {
+        addChild(paddle)
+        addChild(ball)
         
-        // check for lost ball
-        if ball.position.y < deathThreshold {
-            resetBall()
-        }
-        
-        // end level when all blocks are destroyed
-        if grid.blocks.count == 0 {
-            endLevel()
+        addGridSprites()
+    }
+    
+    func addGridSprites() {
+        for block in grid.blocks {
+            if let sprite = block.sprite {
+                addChild(sprite)
+            }
         }
     }
+}
+
+// MARK: - Level Events
+
+extension GameScene {
+    
+    func startLevel() {
+        isGameRunning = true
+        ball.launch()
+    }
+    
+    func resetBall() {
+        ball.reset()
+    }
+    
+    func endLevel() {
+        isGameRunning = false
+        
+        let nextLevel = grid.levelNumber++
+        grid = BlockGrid(levelNumber: nextLevel)
+        
+        ball.reset()
+        layoutSprites()
+        addGridSprites()
+    }
+}
+
+// MARK: - Collision Detection
+
+extension GameScene {
     
     func detectGridCollision() {
         var indexOfCollidedBlock: Int?
         
         // look for ball/block collision
         for (index, block) in grid.blocks.enumerate() {
-            if let node = block.node {
-                if CGRectIntersectsRect(node.frame, ball.frame) {
+            if let sprite = block.sprite
+                where CGRectIntersectsRect(sprite.frame, ball.frame) {
+                    
                     indexOfCollidedBlock = index
-                    node.removeFromParent()
+                    sprite.removeFromParent()
                     
                     if let physicsBody = ball.physicsBody {
                         physicsBody.velocity.dy = -physicsBody.velocity.dy
                     }
-                }
             }
         }
         
