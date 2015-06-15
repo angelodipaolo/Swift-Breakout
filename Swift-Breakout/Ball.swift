@@ -10,10 +10,8 @@ import SpriteKit
 
 class Ball: SKSpriteNode {
     
-    func launch() {        
-        if let body = self.physicsBody {
-            body.applyImpulse(CGVectorMake(15, -15))
-        }
+    func launch() {
+        physicsBody?.applyImpulse(CGVectorMake(15, -15))
     }
     
     func configurePhysicsBody() {

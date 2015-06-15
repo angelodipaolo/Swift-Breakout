@@ -18,19 +18,8 @@
 		17956E47196E3EFF009A31EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17956E45196E3EFF009A31EF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1773499D194433FB00368B63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1773497E194433FA00368B63 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17734985194433FB00368B63;
-			remoteInfo = "Breakout-Swift";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		17734986194433FB00368B63 /* Swift-Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Breakout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1773499C194433FB00368B63 /* Swift-BreakoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-BreakoutTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17956E35196E3EE0009A31EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Swift-Breakout/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		17956E36196E3EE0009A31EF /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = "Swift-Breakout/Ball.swift"; sourceTree = SOURCE_ROOT; };
 		17956E37196E3EE0009A31EF /* BlockGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockGrid.swift; path = "Swift-Breakout/BlockGrid.swift"; sourceTree = SOURCE_ROOT; };
@@ -45,13 +34,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		17734983194433FB00368B63 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17734999194433FB00368B63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				17734986194433FB00368B63 /* Swift-Breakout.app */,
-				1773499C194433FB00368B63 /* Swift-BreakoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,39 +104,18 @@
 			productReference = 17734986194433FB00368B63 /* Swift-Breakout.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1773499B194433FB00368B63 /* Swift-BreakoutTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 177349A9194433FB00368B63 /* Build configuration list for PBXNativeTarget "Swift-BreakoutTests" */;
-			buildPhases = (
-				17734998194433FB00368B63 /* Sources */,
-				17734999194433FB00368B63 /* Frameworks */,
-				1773499A194433FB00368B63 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1773499E194433FB00368B63 /* PBXTargetDependency */,
-			);
-			name = "Swift-BreakoutTests";
-			productName = "Breakout-SwiftTests";
-			productReference = 1773499C194433FB00368B63 /* Swift-BreakoutTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1773497E194433FA00368B63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Yayuhh;
 				TargetAttributes = {
 					17734985194433FB00368B63 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					1773499B194433FB00368B63 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 17734985194433FB00368B63;
 					};
 				};
 			};
@@ -173,7 +133,6 @@
 			projectRoot = "";
 			targets = (
 				17734985194433FB00368B63 /* Swift-Breakout */,
-				1773499B194433FB00368B63 /* Swift-BreakoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,13 +145,6 @@
 				17956E47196E3EFF009A31EF /* Main.storyboard in Resources */,
 				17956E40196E3EE0009A31EF /* GameScene.sks in Resources */,
 				17956E43196E3EE0009A31EF /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1773499A194433FB00368B63 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,22 +164,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17734998194433FB00368B63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1773499E194433FB00368B63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17734985194433FB00368B63 /* Swift-Breakout */;
-			targetProxy = 1773499D194433FB00368B63 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		17956E45196E3EFF009A31EF /* Main.storyboard */ = {
@@ -261,6 +198,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -325,6 +263,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/Swift-Breakout/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yayuhh.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Swift-Breakout";
 			};
 			name = Debug;
@@ -336,43 +275,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/Swift-Breakout/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yayuhh.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Swift-Breakout";
-			};
-			name = Release;
-		};
-		177349AA194433FB00368B63 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Breakout-Swift.app/Breakout-Swift";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Breakout-SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "Swift-BreakoutTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		177349AB194433FB00368B63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Breakout-Swift.app/Breakout-Swift";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Breakout-SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "Swift-BreakoutTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
 		};
@@ -393,15 +297,6 @@
 			buildConfigurations = (
 				177349A7194433FB00368B63 /* Debug */,
 				177349A8194433FB00368B63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		177349A9194433FB00368B63 /* Build configuration list for PBXNativeTarget "Swift-BreakoutTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				177349AA194433FB00368B63 /* Debug */,
-				177349AB194433FB00368B63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

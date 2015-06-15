@@ -12,7 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let paddle = Paddle()
     let ball = Ball(imageNamed: "ball")
-    var grid = BlockGrid.GridWithLevel(1)
+    var grid = BlockGrid(levelNumber: 1)
     var isGameRunning = false
     let deathThreshold = CGFloat(20.0)
     
@@ -51,7 +51,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addGridNodes() {
         for block in grid.blocks {
-            addChild(block.node)
+            if let node = block.node {
+                addChild(node)
+            }
         }
     }
     
@@ -70,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func endLevel() {
         let nextLevel = grid.levelNumber++
-        grid = BlockGrid.GridWithLevel(nextLevel)
+        grid = BlockGrid(levelNumber: nextLevel)
         
         resetBall()
         addGridNodes()
@@ -78,7 +80,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Detecting Touches
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch : AnyObject! = touches.first
         let location = touch.locationInNode(self)
         
@@ -91,7 +93,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
 
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch : AnyObject! = touches.first
         let location = touch.locationInNode(self)
         
@@ -100,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         paddle.isActive = false
     }
     
@@ -122,23 +124,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func detectGridCollision() {
-        var indexOfCollidedBlock: Int? // optionals are sweeeeeeeet
+        var indexOfCollidedBlock: Int?
         
         // look for ball/block collision
-        for (index, block) in enumerate(grid.blocks) {
-            if CGRectIntersectsRect(block.node.frame, ball.frame) {
-                indexOfCollidedBlock = index
-                block.node.removeFromParent()
-                
-                if let body = self.ball.physicsBody {
-                    body.velocity.dy = -body.velocity.dy
+        for (index, block) in grid.blocks.enumerate() {
+            if let node = block.node {
+                if CGRectIntersectsRect(node.frame, ball.frame) {
+                    indexOfCollidedBlock = index
+                    node.removeFromParent()
+                    
+                    if let physicsBody = ball.physicsBody {
+                        physicsBody.velocity.dy = -physicsBody.velocity.dy
+                    }
                 }
             }
         }
         
         // remove collided block
-        if let index = indexOfCollidedBlock {
-            grid.blocks.removeAtIndex(index)
+        if let indexToRemove = indexOfCollidedBlock {
+            grid.blocks.removeAtIndex(indexToRemove)
         }
     }
 }

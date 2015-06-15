@@ -8,22 +8,22 @@
 
 import SpriteKit
 
-class BlockGrid {
+struct BlockGrid {
     
-    var blocks: [Block] = []
+    struct Block {
+        let size = CGSize(width: 105.6, height: 30)
+        var node: SKNode?
+    }
+    
+    var blocks = [Block]()
     var levelNumber = 1
     
-    class func GridWithLevel(levelNumber: Int) -> BlockGrid {
-        let grid = BlockGrid(position: CGPoint(x: 50, y: 650), size: CGSizeMake(10, 8))
-        grid.levelNumber = levelNumber
-        return grid
+    init(levelNumber: Int) {
+        self.init(position: CGPoint(x: 50, y: 650), size: CGSizeMake(10, 8))
+        self.levelNumber = levelNumber
     }
 
     init(position: CGPoint, size: CGSize) {
-        addBlocksAtPosition(position, size: size)
-    }
-    
-    func addBlocksAtPosition(position: CGPoint, size: CGSize) {
         let columns = Int(size.width)
         let rows = Int(size.height)
         let padding = 10
@@ -34,18 +34,10 @@ class BlockGrid {
                 block.node = SKSpriteNode(color: UIColor.darkGrayColor(), size:block.size)
                 let positionX = Int(position.x) + x * (Int(block.size.width) + padding)
                 let positionY = Int(position.y) - (y * (Int(block.size.height) + padding))
-                block.node.position = CGPoint(x: positionX, y:  positionY)
+                block.node?.position = CGPoint(x: positionX, y:  positionY)
                 blocks.append(block)
             }
         }
     }
 }
 
-struct Block {
-    var size: CGSize
-    var node: SKNode!
-    
-    init() {
-        size = CGSize(width: 105.6, height: 30)
-    }
-}
