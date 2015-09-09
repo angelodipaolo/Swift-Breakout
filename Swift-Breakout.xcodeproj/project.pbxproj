@@ -7,25 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1785708F1BA0DFAB00467C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785708E1BA0DFAB00467C4E /* AppDelegate.swift */; };
+		178570951BA0DFAC00467C4E /* TVGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570941BA0DFAC00467C4E /* TVGameViewController.swift */; };
+		1785709A1BA0DFAC00467C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 178570981BA0DFAC00467C4E /* Main.storyboard */; };
+		1785709C1BA0DFAC00467C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1785709B1BA0DFAC00467C4E /* Assets.xcassets */; };
+		178570A71BA0DFAC00467C4E /* TVBreakoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570A61BA0DFAC00467C4E /* TVBreakoutTests.swift */; };
+		178570BC1BA0EA1C00467C4E /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B61BA0EA1C00467C4E /* Ball.swift */; };
+		178570BD1BA0EA1C00467C4E /* BlockGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B71BA0EA1C00467C4E /* BlockGrid.swift */; };
+		178570BE1BA0EA1C00467C4E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B81BA0EA1C00467C4E /* GameScene.swift */; };
+		178570BF1BA0EA1C00467C4E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B91BA0EA1C00467C4E /* GameViewController.swift */; };
+		178570C01BA0EA1C00467C4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 178570BA1BA0EA1C00467C4E /* Images.xcassets */; };
+		178570C11BA0EA1C00467C4E /* Paddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570BB1BA0EA1C00467C4E /* Paddle.swift */; };
+		178570C21BA0EA2000467C4E /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B61BA0EA1C00467C4E /* Ball.swift */; };
+		178570C31BA0EA2300467C4E /* BlockGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B71BA0EA1C00467C4E /* BlockGrid.swift */; };
+		178570C41BA0EA2600467C4E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B81BA0EA1C00467C4E /* GameScene.swift */; };
+		178570C51BA0EA2800467C4E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570B91BA0EA1C00467C4E /* GameViewController.swift */; };
+		178570C61BA0EA2B00467C4E /* Paddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178570BB1BA0EA1C00467C4E /* Paddle.swift */; };
 		17956E3D196E3EE0009A31EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E35196E3EE0009A31EF /* AppDelegate.swift */; };
-		17956E3E196E3EE0009A31EF /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E36196E3EE0009A31EF /* Ball.swift */; };
-		17956E3F196E3EE0009A31EF /* BlockGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E37196E3EE0009A31EF /* BlockGrid.swift */; };
-		17956E41196E3EE0009A31EF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E39196E3EE0009A31EF /* GameScene.swift */; };
-		17956E42196E3EE0009A31EF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E3A196E3EE0009A31EF /* GameViewController.swift */; };
-		17956E43196E3EE0009A31EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17956E3B196E3EE0009A31EF /* Images.xcassets */; };
-		17956E44196E3EE0009A31EF /* Paddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17956E3C196E3EE0009A31EF /* Paddle.swift */; };
 		17956E47196E3EFF009A31EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17956E45196E3EFF009A31EF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		178570A31BA0DFAC00467C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1773497E194433FA00368B63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1785708B1BA0DFAB00467C4E;
+			remoteInfo = TVBreakout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		17734986194433FB00368B63 /* Swift-Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Breakout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1785708C1BA0DFAB00467C4E /* TVBreakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVBreakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1785708E1BA0DFAB00467C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		178570941BA0DFAC00467C4E /* TVGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGameViewController.swift; sourceTree = "<group>"; };
+		178570991BA0DFAC00467C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1785709B1BA0DFAC00467C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1785709D1BA0DFAC00467C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		178570A21BA0DFAC00467C4E /* TVBreakoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVBreakoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		178570A61BA0DFAC00467C4E /* TVBreakoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVBreakoutTests.swift; sourceTree = "<group>"; };
+		178570A81BA0DFAC00467C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		178570B61BA0EA1C00467C4E /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		178570B71BA0EA1C00467C4E /* BlockGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGrid.swift; sourceTree = "<group>"; };
+		178570B81BA0EA1C00467C4E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		178570B91BA0EA1C00467C4E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		178570BA1BA0EA1C00467C4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		178570BB1BA0EA1C00467C4E /* Paddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paddle.swift; sourceTree = "<group>"; };
 		17956E35196E3EE0009A31EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Swift-Breakout/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		17956E36196E3EE0009A31EF /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ball.swift; path = "Swift-Breakout/Ball.swift"; sourceTree = SOURCE_ROOT; };
-		17956E37196E3EE0009A31EF /* BlockGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockGrid.swift; path = "Swift-Breakout/BlockGrid.swift"; sourceTree = SOURCE_ROOT; };
-		17956E39196E3EE0009A31EF /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "Swift-Breakout/GameScene.swift"; sourceTree = SOURCE_ROOT; };
-		17956E3A196E3EE0009A31EF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "Swift-Breakout/GameViewController.swift"; sourceTree = SOURCE_ROOT; };
-		17956E3B196E3EE0009A31EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Swift-Breakout/Images.xcassets"; sourceTree = SOURCE_ROOT; };
-		17956E3C196E3EE0009A31EF /* Paddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Paddle.swift; path = "Swift-Breakout/Paddle.swift"; sourceTree = SOURCE_ROOT; };
 		17956E46196E3EFF009A31EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Swift-Breakout/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		17956E48196E3F08009A31EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Swift-Breakout/Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -38,13 +67,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		178570891BA0DFAB00467C4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1785709F1BA0DFAC00467C4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1773497D194433FA00368B63 = {
 			isa = PBXGroup;
 			children = (
+				178570B51BA0EA1C00467C4E /* Shared */,
 				17734988194433FB00368B63 /* Breakout-Swift */,
+				1785708D1BA0DFAB00467C4E /* TVBreakout */,
+				178570A51BA0DFAC00467C4E /* TVBreakoutTests */,
 				17734987194433FB00368B63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				17734986194433FB00368B63 /* Swift-Breakout.app */,
+				1785708C1BA0DFAB00467C4E /* TVBreakout.app */,
+				178570A21BA0DFAC00467C4E /* TVBreakoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,13 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				17956E35196E3EE0009A31EF /* AppDelegate.swift */,
-				17956E36196E3EE0009A31EF /* Ball.swift */,
-				17956E3C196E3EE0009A31EF /* Paddle.swift */,
-				17956E37196E3EE0009A31EF /* BlockGrid.swift */,
-				17956E39196E3EE0009A31EF /* GameScene.swift */,
-				17956E3A196E3EE0009A31EF /* GameViewController.swift */,
 				17956E45196E3EFF009A31EF /* Main.storyboard */,
-				17956E3B196E3EE0009A31EF /* Images.xcassets */,
 				17734989194433FB00368B63 /* Supporting Files */,
 			);
 			path = "Breakout-Swift";
@@ -79,6 +121,40 @@
 				17956E48196E3F08009A31EF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1785708D1BA0DFAB00467C4E /* TVBreakout */ = {
+			isa = PBXGroup;
+			children = (
+				1785708E1BA0DFAB00467C4E /* AppDelegate.swift */,
+				178570941BA0DFAC00467C4E /* TVGameViewController.swift */,
+				178570981BA0DFAC00467C4E /* Main.storyboard */,
+				1785709B1BA0DFAC00467C4E /* Assets.xcassets */,
+				1785709D1BA0DFAC00467C4E /* Info.plist */,
+			);
+			path = TVBreakout;
+			sourceTree = "<group>";
+		};
+		178570A51BA0DFAC00467C4E /* TVBreakoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				178570A61BA0DFAC00467C4E /* TVBreakoutTests.swift */,
+				178570A81BA0DFAC00467C4E /* Info.plist */,
+			);
+			path = TVBreakoutTests;
+			sourceTree = "<group>";
+		};
+		178570B51BA0EA1C00467C4E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				178570B61BA0EA1C00467C4E /* Ball.swift */,
+				178570B71BA0EA1C00467C4E /* BlockGrid.swift */,
+				178570B81BA0EA1C00467C4E /* GameScene.swift */,
+				178570B91BA0EA1C00467C4E /* GameViewController.swift */,
+				178570BB1BA0EA1C00467C4E /* Paddle.swift */,
+				178570BA1BA0EA1C00467C4E /* Images.xcassets */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +177,41 @@
 			productReference = 17734986194433FB00368B63 /* Swift-Breakout.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1785708B1BA0DFAB00467C4E /* TVBreakout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 178570AD1BA0DFAC00467C4E /* Build configuration list for PBXNativeTarget "TVBreakout" */;
+			buildPhases = (
+				178570881BA0DFAB00467C4E /* Sources */,
+				178570891BA0DFAB00467C4E /* Frameworks */,
+				1785708A1BA0DFAB00467C4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVBreakout;
+			productName = TVBreakout;
+			productReference = 1785708C1BA0DFAB00467C4E /* TVBreakout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		178570A11BA0DFAC00467C4E /* TVBreakoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 178570AE1BA0DFAC00467C4E /* Build configuration list for PBXNativeTarget "TVBreakoutTests" */;
+			buildPhases = (
+				1785709E1BA0DFAC00467C4E /* Sources */,
+				1785709F1BA0DFAC00467C4E /* Frameworks */,
+				178570A01BA0DFAC00467C4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				178570A41BA0DFAC00467C4E /* PBXTargetDependency */,
+			);
+			name = TVBreakoutTests;
+			productName = TVBreakoutTests;
+			productReference = 178570A21BA0DFAC00467C4E /* TVBreakoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -113,6 +224,13 @@
 				TargetAttributes = {
 					17734985194433FB00368B63 = {
 						CreatedOnToolsVersion = 6.0;
+					};
+					1785708B1BA0DFAB00467C4E = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					178570A11BA0DFAC00467C4E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1785708B1BA0DFAB00467C4E;
 					};
 				};
 			};
@@ -130,6 +248,8 @@
 			projectRoot = "";
 			targets = (
 				17734985194433FB00368B63 /* Swift-Breakout */,
+				1785708B1BA0DFAB00467C4E /* TVBreakout */,
+				178570A11BA0DFAC00467C4E /* TVBreakoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -140,7 +260,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				17956E47196E3EFF009A31EF /* Main.storyboard in Resources */,
-				17956E43196E3EE0009A31EF /* Images.xcassets in Resources */,
+				178570C01BA0EA1C00467C4E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1785708A1BA0DFAB00467C4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1785709A1BA0DFAC00467C4E /* Main.storyboard in Resources */,
+				1785709C1BA0DFAC00467C4E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		178570A01BA0DFAC00467C4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,18 +287,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17956E41196E3EE0009A31EF /* GameScene.swift in Sources */,
-				17956E3F196E3EE0009A31EF /* BlockGrid.swift in Sources */,
-				17956E3E196E3EE0009A31EF /* Ball.swift in Sources */,
+				178570BF1BA0EA1C00467C4E /* GameViewController.swift in Sources */,
+				178570BD1BA0EA1C00467C4E /* BlockGrid.swift in Sources */,
+				178570BC1BA0EA1C00467C4E /* Ball.swift in Sources */,
+				178570C11BA0EA1C00467C4E /* Paddle.swift in Sources */,
+				178570BE1BA0EA1C00467C4E /* GameScene.swift in Sources */,
 				17956E3D196E3EE0009A31EF /* AppDelegate.swift in Sources */,
-				17956E44196E3EE0009A31EF /* Paddle.swift in Sources */,
-				17956E42196E3EE0009A31EF /* GameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		178570881BA0DFAB00467C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178570C51BA0EA2800467C4E /* GameViewController.swift in Sources */,
+				178570C61BA0EA2B00467C4E /* Paddle.swift in Sources */,
+				178570C41BA0EA2600467C4E /* GameScene.swift in Sources */,
+				178570C31BA0EA2300467C4E /* BlockGrid.swift in Sources */,
+				178570C21BA0EA2000467C4E /* Ball.swift in Sources */,
+				178570951BA0DFAC00467C4E /* TVGameViewController.swift in Sources */,
+				1785708F1BA0DFAB00467C4E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1785709E1BA0DFAC00467C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178570A71BA0DFAC00467C4E /* TVBreakoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		178570A41BA0DFAC00467C4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1785708B1BA0DFAB00467C4E /* TVBreakout */;
+			targetProxy = 178570A31BA0DFAC00467C4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		178570981BA0DFAC00467C4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				178570991BA0DFAC00467C4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		17956E45196E3EFF009A31EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -258,6 +432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/Swift-Breakout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yayuhh.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Swift-Breakout";
@@ -270,9 +445,82 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/Swift-Breakout/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yayuhh.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Swift-Breakout";
+			};
+			name = Release;
+		};
+		178570A91BA0DFAC00467C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TVBreakout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angelodipaolo.TVBreakout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		178570AA1BA0DFAC00467C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TVBreakout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angelodipaolo.TVBreakout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		178570AB1BA0DFAC00467C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TVBreakoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angelodipaolo.TVBreakoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVBreakout.app/TVBreakout";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		178570AC1BA0DFAC00467C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TVBreakoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angelodipaolo.TVBreakoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVBreakout.app/TVBreakout";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -296,6 +544,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		178570AD1BA0DFAC00467C4E /* Build configuration list for PBXNativeTarget "TVBreakout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				178570A91BA0DFAC00467C4E /* Debug */,
+				178570AA1BA0DFAC00467C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		178570AE1BA0DFAC00467C4E /* Build configuration list for PBXNativeTarget "TVBreakoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				178570AB1BA0DFAC00467C4E /* Debug */,
+				178570AC1BA0DFAC00467C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

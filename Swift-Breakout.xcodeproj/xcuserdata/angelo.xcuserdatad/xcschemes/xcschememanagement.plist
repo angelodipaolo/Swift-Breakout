@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TVBreakout.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>1773499B194433FB00368B63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1785708B1BA0DFAB00467C4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>178570A11BA0DFAC00467C4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

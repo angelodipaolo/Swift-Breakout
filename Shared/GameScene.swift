@@ -51,15 +51,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: Detecting Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let touch : AnyObject! = touches.first
-        let location = touch.locationInNode(self)
+        if #available(tvOS 9.0, *)  {
+            paddle.isActive = true
         
-        if CGRectContainsPoint(paddle.frame, location) {
-            paddle.isActive = true;
-            
-            if !isGameRunning {
-                startLevel()
-            }
+        } else {
+            let touch : AnyObject! = touches.first
+            let location = touch.locationInNode(self)
+            paddle.isActive = CGRectContainsPoint(paddle.frame, location)
+        }
+ 
+        if paddle.isActive && !isGameRunning {
+            startLevel()
         }
     }
 
