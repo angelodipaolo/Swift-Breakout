@@ -9,7 +9,7 @@
 import XCTest
 @testable import TVBreakout
 
-class TVBreakoutTests: XCTestCase {
+final class TVBreakoutTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

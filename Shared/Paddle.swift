@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Paddle: SKSpriteNode {
+final class Paddle: SKSpriteNode {
     
     var isActive = false
     

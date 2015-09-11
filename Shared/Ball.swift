@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Ball: SKSpriteNode {
+final class Ball: SKSpriteNode {
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize)  {
         super.init(texture: texture, color: color, size: size)
@@ -32,6 +32,7 @@ extension Ball {
         physicsBody?.restitution = 1.0
         physicsBody?.linearDamping = 0.0
         physicsBody?.allowsRotation = false
+        physicsBody?.contactTestBitMask = PhysicsCategory.bottom
     }
     
     func launch() {

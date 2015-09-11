@@ -8,35 +8,44 @@
 
 import SpriteKit
 
-struct BlockGrid {
+final class BlockGrid {
+    private (set) var blocks = [SKSpriteNode]()
     
-    struct Block {
-        let size = CGSize(width: 105.6, height: 30)
-        var sprite: SKSpriteNode?
-    }
-    
-    var blocks = [Block]()
-    var levelNumber = 1
-    
-    init(levelNumber: Int) {
-        self.init(position: CGPoint(x: 50, y: 650), size: CGSizeMake(10, 8))
-        self.levelNumber = levelNumber
-    }
-
-    init(position: CGPoint, size: CGSize) {
-        let columns = Int(size.width)
-        let rows = Int(size.height)
-        let padding = 10
+    init(frame: CGRect, gridSize: CGSize) {
+        let columns = Int(gridSize.width)
+        let rows = Int(gridSize.height)
+        let padding = CGFloat(10)
         
-        for y in 0...rows {
-            for x in 0...columns {
-                var block = Block()
-                block.sprite = SKSpriteNode(color: UIColor.darkGrayColor(), size:block.size)
-                let positionX = Int(position.x) + x * (Int(block.size.width) + padding)
-                let positionY = Int(position.y) - (y * (Int(block.size.height) + padding))
-                block.sprite?.position = CGPoint(x: positionX, y:  positionY)
+        let totalPaddingWidth = (gridSize.width - 1) * padding
+        let totalPaddingHeight = (gridSize.height - 1) * padding
+        let blockWidth = ((frame.width - totalPaddingWidth) / gridSize.width)
+        let blockHeight = ((frame.height - totalPaddingHeight) / gridSize.height)
+        
+        for y in 1...rows {
+            for x in 1...columns {
+                let x = CGFloat(x)
+                let y = CGFloat(y)
+                
+                let size = CGSize(width: blockWidth, height: blockHeight)
+                let block = SKSpriteNode(color: UIColor.darkGrayColor(), size: size)
+                let positionX = frame.origin.x + (x * (block.size.width + padding))
+                let positionY = frame.origin.y - (y * (block.size.height + padding))
+                block.position = CGPoint(x: positionX, y:  positionY)
                 blocks.append(block)
             }
         }
+    }
+}
+
+extension BlockGrid {
+    
+    func addToScene(scene: SKScene) {
+        for block in blocks {
+            scene.addChild(block)
+        }
+    }
+    
+    func removeBlockAtIndex(indexToRemove: Int) {
+        blocks.removeAtIndex(indexToRemove)
     }
 }
